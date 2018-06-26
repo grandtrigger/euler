@@ -32,5 +32,36 @@ function sumEven(limit) {
     }
 }
 
+// function sumEven(limit) {
+//     console.time('timeend');
+
+//     if (limit < 2) return 0;
+
+//     var i = 0
+//     var next = 0;
+//     var sum = 0;
+//     var memo = [];
+
+//     while(next < limit) {
+//         if (next % 2 === 0) sum += next;
+        
+//         next = fibonacci(i);
+//         i++;
+//     }
+
+//     return sum;
+    
+//     function fibonacci(n) {
+//         if (memo[n] != null) return memo[n];
+
+//         if (n <= 1) return 1;
+        
+//         var result = fibonacci(n - 1) + fibonacci(n - 2);
+//         memo[n] = result;
+        
+//         return result;
+//     }
+// }
+
 sumEven(4000000);
 console.timeEnd('timeend');
