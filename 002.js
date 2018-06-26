@@ -8,6 +8,8 @@
 
 
 function sumEven(limit) {
+    console.time('timeend');
+
     if (limit < 2) return 0;
 
     var next = 3;
@@ -16,18 +18,19 @@ function sumEven(limit) {
     var sum = 0;
 
     while (act <= limit) {
-        if (act % 2 === 0) { sum += act };
+        if (act % 2 === 0) sum += act;
 
         prev = act;
         act = next;
-        next = nextNumber(act, prev);
+        next = nextNumber();
     }
 
     return sum;
 
-    function nextNumber(i, j) {
-        return i + j;
+    function nextNumber() {
+        return act + prev;
     }
 }
 
-sumEven(4000000)
+sumEven(4000000);
+console.timeEnd('timeend');
